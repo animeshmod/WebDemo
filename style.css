@@ -1,0 +1,176 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: #1e3a5f;
+    color: #fff;
+    padding: 1em 2em;
+    text-align: center;
+    position: relative;
+}
+
+.username {
+    position: absolute;
+    top: 1em;
+    right: 2em;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2em;
+}
+
+#searchForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 50px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2em;
+    transition: all 0.5s ease;
+}
+
+#searchInput {
+    padding: 15px;
+    font-size: 20px;
+    border: none;
+    background: none;
+    outline: none;
+    width: 50vw;
+    max-width: 600px;
+}
+
+button[type="submit"] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: #e0e0e0;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #d0d0d0;
+}
+
+button[type="submit"] svg {
+    width: 24px;
+    height: 24px;
+    color: #444;
+    transform: rotate(45deg);
+}
+
+#results-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+}
+
+#output-container {
+    flex: 2;
+    margin-top: 2em;
+}
+
+#info-container {
+    flex: 1;
+    margin-top: 2em;
+    padding: 2em;
+    background-color: #e9ecef;
+    border-radius: 8px;
+}
+
+.info-title {
+    margin-top: 0;
+    border-bottom: 2px solid #ced4da;
+    padding-bottom: 0.5em;
+}
+
+#info-container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#info-container li {
+    padding: 0.5em 0;
+    font-size: 1.1em;
+}
+
+#output-container table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 800px;
+}
+
+#output-container th,
+#output-container td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+#output-container th {
+    background-color: #1e3a5f;
+    color: white;
+}
+
+#output-container tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#next-options {
+    text-align: center;
+    margin-top: 2em;
+}
+
+#options-list {
+    list-style: none;
+    padding: 0;
+}
+
+#options-list li {
+    display: inline-block;
+    background-color: #fff;
+    padding: 1em 2em;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 0 1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#options-list li:hover {
+    background-color: #e9ecef;
+    transform: translateY(-2px);
+}
+
+.hidden {
+    display: none;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 1em 0;
+    text-align: center;
+}
