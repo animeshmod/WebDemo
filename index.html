@@ -4,50 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
         <h1>Feature Assist</h1>
-        <p>Please select a task below to get started</p>
-        <div class="username">Animesh Mod</div>
+        <div class="username">Username</div>
     </header>
 
     <main>
-        <form id="searchForm">
-            <input type="text" id="searchInput" placeholder="Search for a task...">
-            <button type="submit">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-send">
-                    <line x1="22" y1="2" x2="11" y2="13"></line>
-                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-                </svg>
-            </button>
-        </form>
-        <div id="results-wrapper" class="hidden">
-            <div id="output-container">
+        <section id="search-section">
+            <form id="searchForm">
+                <input type="text" id="searchInput" placeholder="Search for features, datasets, or insights...">
+                <button type="submit" aria-label="Submit Search">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-send">
+                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                    </svg>
+                </button>
+            </form>
+        </section>
+
+        <div id="loader" class="hidden"></div>
+        
+        <section id="results-section" class="hidden">
+            <div id="output-container" class="card">
                 <h2 id="result-message"></h2>
+                <div id="table-wrapper"></div>
             </div>
-            <div id="info-container" class="hidden">
+            <div id="info-container" class="card">
                 <h3 class="info-title">Searched Dataset:</h3>
                 <ul>
                     <li>Customer Purchase Table</li>
-                    <li>Customer Account Table</li>
                 </ul>
                 <div id="sql-query-container">
                     <h3 class="info-title">SQL Query Used:</h3>
-                    <p id="sql-query-text"></p>
+                    <pre><code id="sql-query-text"></code></pre>
                 </div>
             </div>
-        </div>
-        <div id="next-options" class="hidden">
-            <h2 id="next-options-title">What would you like to do with the results?</h2>
+        </section>
+
+        <section id="next-options" class="hidden">
+            <h2 id="next-options-title">How do you like to use the results ?</h2>
             <ul id="options-list">
-                <li>Store output for analysis</li>
+                <li>Do Nothing</li>
                 <li>Create New Feature</li>
-                <li>Add Feature to Aggregation</li>
+                <li>Add Feature to Existing Aggregation</li>
+                <li>Create New Aggregation</li>
             </ul>
-        </div>
+        </section>
     </main>
 
     <footer>
